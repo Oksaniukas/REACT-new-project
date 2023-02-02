@@ -1,0 +1,21 @@
+.about-block {
+   width: 1200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+   text-align: center;
+
+   &__image img {
+      width: 400px;
+   }
+
+   &__text {
+      width: 350px;
+      font-size: 18px;
+   }
+
+   & p {
+      margin-bottom: 7px;
+   }
+}

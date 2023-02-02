@@ -1,0 +1,61 @@
+.logo-block {
+   gap: 20px;
+}
+ 
+.logo {
+  width: 200px;
+  border-radius: 50%;
+}
+ 
+.nav-list {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  & .nav-list-item {
+    margin-right: 20px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #453248;
+    cursor: pointer;
+  }
+
+  & .nav-active-link {
+    text-decoration: underline;
+    font-weight: 700;
+    color:  #453248;
+  }
+}
+
+.header-account-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.wishlist,
+.cart,
+.login-button {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+
+}
+
+
+.login-button {
+  background-color: #6e4e71;
+  color: #FFFFFF;
+  padding: 10px 5px;
+  font-size: 15px;
+
+  &:hover {
+    background-color: #453248;
+    color: #FFFFFF;
+  }
+}
+
+.login-img {
+  width: 100%;
+}

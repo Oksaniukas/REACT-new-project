@@ -4,9 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home"; 
 import MyWorks from "./Pages/MyWorks";
 import Services from "./Pages/Services";
-import Eshop from "./Pages/Eshop";
 import Contacts from "./Pages/Contacts";
 import LoginLayout from "./Layouts/LoginLayout";
+import AboutMe from "./Pages/AboutMe";
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
         <Route path="/login" element={ <LoginLayout /> } />
         <Route path="/" element={ <MainLayout /> }>
           <Route index element= { <Home /> } />
+          <Route path="/aboutme" element={ <AboutMe /> } />
           <Route path="/myworks" element={ <MyWorks /> } />
           <Route path="/services" element={ <Services /> } />
-          <Route path="/eshop" element={ <Eshop /> }/>
           <Route path="/contacts" element={ <Contacts /> } />
         </Route>
       </Routes>

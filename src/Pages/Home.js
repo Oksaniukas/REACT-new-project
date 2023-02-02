@@ -1,12 +1,11 @@
 import React from "react";
+import Slider from "../components/Slider";
 
 function Home() {
    return (
-      <div>
-         <div>Home</div>
-         <img src="./assets/images/main.jpg" alt="person" />
+      <div className="wrapper">
+         <Slider />
       </div>
-
    )
 };
 

@@ -1,20 +1,21 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 
 function MainLayout() {
-   const activeLink = ({activeLink}) => activeLink ? "active-link nav-list-item" : "nav-list-item";
+   const isActive = ({isActive}) => isActive ? "nav-active-link nav-list-item" : "nav-list-item";
    return (
       <div className="wrapper">
          <header>
             <div className="container">
                <Logo />
                <div className="nav-list">
-                  <NavLink to="/" className={activeLink}>Pradžia</NavLink>
-                  <NavLink to="/myworks" className={activeLink}>Mano darbai</NavLink>
-                  <NavLink to="/services" className={activeLink}>Paslaugos</NavLink>
-                  <NavLink to="/eshop" className={activeLink}>E-parduotuvė</NavLink>
-                  <NavLink to="/contacts" className={activeLink}>Kontaktai</NavLink>
+                  <NavLink to="/" className={isActive}>Pradžia</NavLink>
+                  <NavLink to="/aboutme" className={isActive}>Apie mane</NavLink>
+                  <NavLink to="/myworks" className={isActive}>Mano darbai</NavLink>
+                  <NavLink to="/services" className={isActive}>Paslaugos</NavLink>
+                  <NavLink to="/contacts" className={isActive}>Kontaktai</NavLink>
                </div>
                <div className="header-account-block">
                   <div className="wishlist">
@@ -28,7 +29,7 @@ function MainLayout() {
                   <div className="login-block">
                      <button className="login-button">
                         <div className="login-icon">
-                           <img src="./assets/images/person.svg" alt="person" />
+                           <img className="login-img" src="./assets/images/person.svg" alt="person" />
                         </div>
                         <div>Login/Register</div>
                      </button>
@@ -43,9 +44,7 @@ function MainLayout() {
          </div>
 
          <footer>
-            <div className="container">
-               Kontaktai
-            </div>
+            <Footer />
          </footer>
       </div>
    )
