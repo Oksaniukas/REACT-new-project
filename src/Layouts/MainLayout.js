@@ -18,10 +18,6 @@ function MainLayout() {
                   <NavLink to="/contacts" className={isActive}>Kontaktai</NavLink>
                </div>
                <div className="header-account-block">
-                  <div className="wishlist">
-                     <img src="./assets/images/heart.svg" alt="heart" />
-                     <div className="wishlist-amount">0</div>
-                  </div>
                   <div className="cart">
                      <img src="./assets/images/cart.svg" alt="cart" />
                      <div className="cart-item-amount">0</div>
