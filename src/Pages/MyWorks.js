@@ -47,6 +47,7 @@ function MyWorks() {
               <div className="myworks-image-block-img">
                   <img src={photos.img} alt='photo'/>
               </div>
+              {/* {photoList} */}
            </div> 
          </div>
       </div>

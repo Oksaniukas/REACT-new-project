@@ -47,8 +47,9 @@
 .login-button {
   background-color: #6e4e71;
   color: #FFFFFF;
-  padding: 10px 5px;
+  padding: 10px 10px;
   font-size: 15px;
+  border-radius: 3px;
 
   &:hover {
     background-color: #453248;
@@ -56,6 +57,17 @@
   }
 }
 
-.login-img {
+.login-icon {
+  height: 21px;
+  width: 21px;
+}
+
+.login-img, .cart-img {
   width: 100%;
+}
+
+.cart-img {
+  color: #FFFFFF;
+  width: 31px
+
 }

@@ -2,9 +2,14 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
+import { useNavigate } from "react-router-dom";
+import LoginButton from "../components/LoginButton";
+import CartButton from "../components/CartButton";
 
 function MainLayout() {
+   let navigate = useNavigate()
    const isActive = ({isActive}) => isActive ? "nav-active-link nav-list-item" : "nav-list-item";
+
    return (
       <div className="wrapper">
          <header>
@@ -19,17 +24,10 @@ function MainLayout() {
                </div>
                <div className="header-account-block">
                   <div className="cart">
-                     <img src="./assets/images/cart.svg" alt="cart" />
-                     <div className="cart-item-amount">0</div>
+                     <CartButton />
                   </div>
                   <div className="login-block">
-                     <button className="login-button">
-                        <div className="login-icon">
-                           <img className="login-img" src="./assets/images/person.svg" alt="person" />
-                        </div>
-                        <div>Login/Register</div>
-                     </button>
-                     
+                     <LoginButton  />
                   </div>
                </div>
             </div>
