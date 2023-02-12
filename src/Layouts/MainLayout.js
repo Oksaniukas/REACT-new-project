@@ -1,14 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButton";
 import CartButton from "../components/CartButton";
+import LogoutButton from "../components/LogoutButton";
 
 function MainLayout() {
    let navigate = useNavigate()
    const isActive = ({isActive}) => isActive ? "nav-active-link nav-list-item" : "nav-list-item";
+   const [isLoggedin, setIsLoggedin] = useState(false);
 
    return (
       <div className="wrapper">
@@ -27,7 +30,13 @@ function MainLayout() {
                      <CartButton />
                   </div>
                   <div className="login-block">
-                     <LoginButton  />
+                     {!isLoggedin ? (
+                        <LoginButton />
+                     )
+                        : (
+                           <LogoutButton />
+                        )
+                     }
                   </div>
                </div>
             </div>

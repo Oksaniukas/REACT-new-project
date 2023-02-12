@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { photoDataActionCreater } from "../store";
+import { photoDataActionCreater } from "../store/photoReducer";
 
 
 function MyWorks() {
@@ -18,10 +18,11 @@ function MyWorks() {
    function myWorksCategoryHandler(e) {
       if (e.target.dataset.category === "Person" || e.target.dataset.category === "Family" || e.target.dataset.category === "Children" || e.target.dataset.category === "Christening") {
          let filteredPhotos = photos.filter((photo) => photo.category == e.target.dataset.category)
+        
          return (
             <div className="myworks-image-block-card">
                <div className="myworks-image-block-img">
-                  <img src={filteredPhotos.img} alt="" />
+                  <img src={filteredPhotos.img} alt="filtered" />
                </div>
             </div> 
            
@@ -45,9 +46,9 @@ function MyWorks() {
         <div className="myworks-image-block">
            <div className="myworks-image-block-card">
               <div className="myworks-image-block-img">
-                  <img src={photos.img} alt='photo'/>
+                  <img src={photoList.img} alt='photo'/>
+                  {/* {photoList} */}
               </div>
-              {/* {photoList} */}
            </div> 
          </div>
       </div>

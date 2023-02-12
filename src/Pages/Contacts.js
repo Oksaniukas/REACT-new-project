@@ -13,7 +13,7 @@ function Contacts() {
             <div className="contacts-block-text"> telefonu +370 672 37637 </div>
             <div className="contacts-block-text"> arba naudodamiesi šia forma: </div>
          </div>
-         <form>
+         <form >
             <div className="contacts-form-text">Jūsų vardas:</div>
             <input type="text" className="contacts-input-item"/>
             <div className="contacts-form-text">Jūsų el.paštas:</div>

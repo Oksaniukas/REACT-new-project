@@ -1,8 +1,28 @@
 import React from "react";
 
+// import dataServiceCard from "../dataServiceCard";
+// import ServiceCard from "../components/ServiceCard";
+
+import { useDispatch } from "react-redux";
+import { addToCartReducerAC } from "../store/addToCartReducer";
+
 function Services() {
+
+   // let listOfServiceCard = dataServiceCard.map((card, idx) => {
+   //    return <ServiceCard key={idx} datadataServiceCard={card} />
+   // })
+
+   const dispatch = useDispatch();
+   const addToCart = () => dispatch(addToCartReducerAC(1))
+
    return (
       <div className="services-block">
+         {/* <div>
+         {listOfServiceCard}
+         </div> */}
+
+
+
          <div className="services-block__card">
             <div className="services-block__card-img">
                <img src="./assets/images/person/pers16.jpg" alt="pers16" />
@@ -16,7 +36,7 @@ function Services() {
                   <div className="services-block__card-text-price">70 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -33,7 +53,7 @@ function Services() {
                   <div className="services-block__card-text-price">100 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -47,10 +67,10 @@ function Services() {
                <div className="services-block__card-text-photo">100 redaguotų nuotraukų</div>
                <div className="services-block__card-text-price-block">
                   <div className="services-block__card-text-price-name">Paslaugos kaina: </div>
-                  <div className="services-block__card-text-price">120 Eur</div>
+                  <div className="serviceonClick={() => {addToCart()}}s-block__card-text-price">120 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -67,7 +87,7 @@ function Services() {
                   <div className="services-block__card-text-price">120 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -84,7 +104,7 @@ function Services() {
                   <div className="services-block__card-text-price">150 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -101,7 +121,7 @@ function Services() {
                   <div className="services-block__card-text-price">250 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -118,7 +138,7 @@ function Services() {
                   <div className="services-block__card-text-price">70 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
          </div>
@@ -135,7 +155,7 @@ function Services() {
                   <div className="services-block__card-text-price">100 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
 
@@ -153,7 +173,7 @@ function Services() {
                   <div className="services-block__card-text-price">120 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
 
@@ -171,7 +191,7 @@ function Services() {
                   <div className="services-block__card-text-price">150 Eur</div>
                </div>
                <div className="services-block__button-block">
-                  <button className="services-block__button">Įdėti į krepšį</button>
+                  <button onClick={() => {addToCart()}} className="services-block__button">Įdėti į krepšį</button>
                </div>
             </div>
 
