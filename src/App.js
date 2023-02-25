@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainLayout from "./Layouts/MainLayout";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home"; 
@@ -11,7 +11,24 @@ import { LoginPage } from "./Pages/LoginPage";
 import { NewUserPage } from "./Pages/NewUserPage";
 import CartPage from "./Pages/CartPage";
 
+
+import dataServiceCard from "./dataServiceCard";
+
 function App() {
+
+// const { productItems } = dataServiceCard;
+// const [cartItems, setCartItems] = useState([]);
+// const handleAddProduct = (product) => {
+//   const ProductExist = cartItems.find((item) => item.id === product.id);
+//   if (ProductExist) {
+//     setCartItems(cartItems.map((item) => item.id === product.id ?
+//     {...ProductExist, quantity: ProductExist.quantity + 1} : item)
+//     )
+//   } else{
+//     setCartItems([...cartItems, {...product, quantity: 1 }])
+//   }
+// }
+ 
   return (
     <div className="App">
       <Routes>
@@ -25,8 +42,8 @@ function App() {
           <Route path="/aboutme" element={ <AboutMe /> } />
           <Route path="/myworks" element={ <MyWorks /> } />
           <Route path="/services" element={ <Services /> } />
-          <Route path="/contacts" element={ <Contacts /> } />
-          <Route path="/cart" element={ <CartPage /> } />
+          <Route path="/contacts" element={ <Contacts /> } /> 
+          <Route path="/cart" element={ <CartPage /> }   />
         </Route>
       </Routes>
     </div>

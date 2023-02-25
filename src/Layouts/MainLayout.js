@@ -29,7 +29,7 @@ function MainLayout() {
                   <div className="cart">
                      <CartButton />
                   </div>
-                  <div className="login-block">
+                  {/* <div className="login-block">
                      {!isLoggedin ? (
                         <LoginButton />
                      )
@@ -37,7 +37,7 @@ function MainLayout() {
                            <LogoutButton />
                         )
                      }
-                  </div>
+                  </div> */}
                </div>
             </div>
          </header>

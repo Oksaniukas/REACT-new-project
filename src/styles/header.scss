@@ -36,7 +36,8 @@
 
 .wishlist,
 .cart,
-.login-button {
+.login-button,
+.cart-button {
   display: flex;
   gap: 10px;
   cursor: pointer;
@@ -44,7 +45,7 @@
 }
 
 
-.login-button {
+.login-button, .cart-button {
   background-color: #6e4e71;
   color: #FFFFFF;
   padding: 10px 10px;
@@ -57,17 +58,32 @@
   }
 }
 
-.login-icon {
+.login-icon, .cart-icon {
   height: 21px;
   width: 21px;
 }
 
-.login-img, .cart-img {
+.login-img {
   width: 100%;
 }
 
 .cart-img {
   color: #FFFFFF;
-  width: 31px
+  width: 31px;
+  
+}
 
+.cart-page-button {
+  background-color: #6e4e71;
+  color: #FFFFFF;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 3px;
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #453248;
+    color: #FFFFFF;
+  }
 }

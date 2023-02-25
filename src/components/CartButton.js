@@ -12,8 +12,9 @@ function CartButton() {
    }
 
    return (
-      <button onClick={() => {goToCartPage()}} className="login-button">
-         <div className="login-icon">
+      <button onClick={() => {goToCartPage()}} className="cart-button"> 
+      <div >Pirkti</div> 
+         <div className="cart-icon">
             <img className="cart-img" src="./assets/images/cart1.png" alt="cart" />
          </div>
          <div className="cart-item-amount">{count}</div>

@@ -49,6 +49,9 @@
       padding: 10px 10px;
       font-size: 15px;
       border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
          background-color: #453248;

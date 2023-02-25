@@ -10,13 +10,8 @@ aside {
 
 }
 
-.myworks-image-block {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr ;
-   gap: 10px;
-}
-
 .myworks-aside-text {
+   width: 200px;
    padding: 10px;
    background-color: #6e4e71;
    color: #FFFFFF;
@@ -34,7 +29,18 @@ aside {
 
 }
 
-.myworks-image-block-img img {
-
-   width: 300px;
+.myworks-image-block {
+   
 }
+
+.myworks-image-block-img {
+   grid-template-columns: repeat(3, 320px);
+   display: grid;
+   grid-gap: 3px;
+   align-items: center;
+
+   & img {
+      width: 320px;
+   }
+}
+
