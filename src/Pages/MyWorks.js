@@ -4,7 +4,69 @@ import { useSelector } from "react-redux";
 function MyWorks() {
 
    const photos = useSelector((state) => state.photos);
-   const [photoList, setPhotoList] = useState(photos.photos)
+   const [photoList, setPhotoList] = useState(photos.photos);
+   const [categoryLinksList, setCategoryLinksList] = useState([
+      {
+         category: "All",
+         linkText: 'Visos',
+         selected: true
+      },
+      {
+         category: "Person",
+         linkText: 'Asmeninė fotosesija',
+         selected: false
+      },
+      {
+         category: "Family",
+         linkText: 'Šeimos fotosesija',
+         selected: false
+      },
+      {
+         category: "Children",
+         linkText: 'Vaikai',
+         selected: false
+      },
+      {
+         category: "Love",
+         linkText: 'Poros fotosesija',
+         selected: false
+      },
+      {
+         category: "Christening",
+         linkText: 'Krikštynos',
+         selected: false
+      },
+      {
+         category: "Wedding",
+         linkText: 'Vestuvės',
+         selected: false
+      },
+      {
+         category: "Birthday",
+         linkText: 'Gimtadieniai',
+         selected: false
+      },
+      {
+         category: "Nature",
+         linkText: 'Gamta',
+         selected: false
+      },
+      {
+         category: "Pets",
+         linkText: 'Gyvūnai',
+         selected: false
+      },
+      {
+         category: "Festival",
+         linkText: 'Kitos šventės',
+         selected: false
+      },
+      {
+         category: "Challenge",
+         linkText: 'Challenge',
+         selected: false
+      },
+   ])
 
    const photoCardList = photoList.map((photo, idx) => {
       return (
@@ -17,6 +79,16 @@ function MyWorks() {
    })   
  
    function myWorksCategoryHandler(e) {
+      let id = e.target.dataset.id;
+
+      setCategoryLinksList (prev => {
+         let newList = [...prev]
+         newList.forEach(link => {
+            link.selected = false
+         })
+         newList[id].selected = true;
+         return newList
+      })
       
       if (e.target.dataset.category === "All" ) {
          setPhotoList(photos.photos)
@@ -30,22 +102,25 @@ function MyWorks() {
    function addActiveClass(e) {
       e.target.className = "myworks-aside-text-active myworks-aside-text"
    }
+
+   let categoryList = categoryLinksList.map((link, idx) => {
+      return (
+         <div 
+            onClick={(e) => myWorksCategoryHandler(e) } 
+            data-id = {idx}
+            key= {idx}
+            data-category={link.category}
+            className={`myworks-aside-text ${link.selected ? 'myworks-aside-text-active' : '' } `} > 
+            {link.linkText}
+         </div>
+
+      )
+   })
    
-  return (
+   return (
       <div className="container-myworks">
          <aside>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="All" className="myworks-aside-text-active myworks-aside-text">visos</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Person" className="myworks-aside-text">Asmeninė fotosesija</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Family" className="myworks-aside-text">šeimos fotosesija</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Children" className="myworks-aside-text">vaikai</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Love" className="myworks-aside-text">poros fotosesija</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Christening" className="myworks-aside-text">Krikštynos</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Wedding" className="myworks-aside-text">Vestuvės</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Birthday" className="myworks-aside-text">Gimtadieniai</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Nature" className="myworks-aside-text">Gamta</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Pets" className="myworks-aside-text">Gyvūnai</div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Festival" className="myworks-aside-text">Kitos šventės </div>
-            <div onClick={(e) => myWorksCategoryHandler(e) } data-category="Challenge" className="myworks-aside-text">Challenge</div>
+            {categoryList}
          </aside>
         <div className="myworks-image-block">
            <div className="myworks-image-block-card">

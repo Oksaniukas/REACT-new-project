@@ -1,16 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCartReducerAC } from "../store/addToCartReducer";
-import { addServiceCardReducer } from "../store/servicesCartReducer";
 
 function ServiceCard(props) {
 
    const dispatch = useDispatch();
-   const addToCart = () => dispatch(addToCartReducerAC(1))
+   const addToCart = () => dispatch(addToCartReducerAC({
+      service: props.dataServiceCard
+   }))
    
-  
-
-
    return (
       <div className="services-block__card">
          <div className="services-block__card-img">
