@@ -15,10 +15,23 @@ export const addToCartReducer = (state = defaultState, action) => {
          return {...state, count: state.count + 1, selectedServicesList: [...state.selectedServicesList, action.payload.service]}
       
       case DELETE_SERVICE_CARD:
-         return {...state, count: state.count - 1, selectedServicesList: state.selectedServicesList.filter(card => {
-            return card.id !== action.payload
-         })}
+
+      const { index }= action.payload;
+      return {
+         ...state, count: state.count - 1, selectedServicesList: [ ...state.selectedServicesList.slice(0, index), ...state.selectedServicesList.slice (index + 1)]
+      }
+      // const index = state.selectedServicesList.indexOf(action.payload)
       
+      // return {...state, count: state.count - 1, selectedServicesList: state.selectedServicesList.splice(index, 1)}
+         
+      // return {...state, count: state.count - 1, selectedServicesList: state.selectedServicesList.splice(action.payload, 0) }
+
+
+         // return {...state, count: state.count - 1, selectedServicesList: state.selectedServicesList.filter(card => {
+         //    return card.id !== action.payload
+         // })}
+
+       
       case DELETE_ALL_CARD:
          return {...state, count: 0, selectedServicesList: []}
       default: return state

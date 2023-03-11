@@ -13,7 +13,7 @@ function CartPage() {
   
   const cardList = selectedServices.map((card, idx)=> {
     return(
-      <div className="cart-page__card-block" key={idx}>
+      <div data-id={idx} className="cart-page__card-block" key={idx}>
         <div className="cart-page__card-img-block">
           <img src={card.img} alt="service_image" />
         </div>
