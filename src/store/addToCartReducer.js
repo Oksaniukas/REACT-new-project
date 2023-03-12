@@ -16,11 +16,12 @@ export const addToCartReducer = (state = defaultState, action) => {
       
       case DELETE_SERVICE_CARD:
 
-      const { index }= action.payload;
+      
+      const index = state.selectedServicesList.indexOf(action.payload)
       return {
-         ...state, count: state.count - 1, selectedServicesList: [ ...state.selectedServicesList.slice(0, index), ...state.selectedServicesList.slice (index + 1)]
+         ...state, count: state.count - 1, 
+         selectedServicesList: [ ...state.selectedServicesList.slice(0, index)]
       }
-      // const index = state.selectedServicesList.indexOf(action.payload)
       
       // return {...state, count: state.count - 1, selectedServicesList: state.selectedServicesList.splice(index, 1)}
          
